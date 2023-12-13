@@ -45,7 +45,6 @@ public class NewsController : ControllerBase
     [HttpGet]
     public IActionResult GetNews()
     {
-        // Original implementation - expose all attributes
         var newsList = _newsService.GetAllNews();
         return Ok(newsList);
     }
@@ -53,7 +52,6 @@ public class NewsController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetNewsById(int id)
     {
-        // Original implementation - expose all attributes
         var news = _newsService.GetNewsById(id);
         return Ok(news);
     }
@@ -61,7 +59,6 @@ public class NewsController : ControllerBase
     [HttpPost]
     public IActionResult CreateNews([FromBody] NewsCreateDTO newsCreateDTO)
     {
-        // Original implementation - expose all attributes
         var userId = _userService.GetUserId();
         var createdNews = _newsService.CreateNews(newsCreateDTO, userId);
         return CreatedAtAction(nameof(GetNewsById), new { id = createdNews.Id }, createdNews);
