@@ -17,6 +17,7 @@ In diesem Portfolio werde ich die erreichten Handlungsziele im Modul 183 nachwei
 ![Artefakt des Handlungsziel 1](https://cdn.discordapp.com/attachments/912953190251642910/1184432122904190996/Screenshot_2023-12-13_104911.png?ex=658bf35f&is=65797e5f&hm=4e5a7c1074d40f8eb6ea0ae60fdc23ebd5ddb7e9d4c50f15c5dfaa9799fb3d91&)
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
+Diese Tabelle zeigt eine selbsterstellte Zusammenfassung der OWASP Top 10 des Jahres 2021. Die Zusammenfassung gibt einem den Überblick der aktuell 10 grössten Bedrohungen für Webanwendungssicherheit. Die Erkennung der Bedrohungen wird durch die Darstellung von Statistiken und Fakten zu Testabdeckungen in den verschiedenen Kategorien (z. B. 94% der Anwendungen getestet für Broken Access Control) nachgewiesen. Auch werden Gegenmassnahmen für diese Bedrohungen aufgezeigt, womit der zweite Teil des Handlungsziel 1 abgedeckt ist. Der dritte Teil wird durch das Aufzeigen der Auswirkungen in der Tabelle ebenfalls erfolgreich erfüllt, wodurch das ganze Handlungsziel 1 mit diesem Artefakt abgedeckt wird.
 
 ### Erklärung Artefakt
 
