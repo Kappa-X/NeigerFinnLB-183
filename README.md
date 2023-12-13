@@ -30,7 +30,9 @@ Ich würde mal so weit gehen und sagen, dass die Umsetzung des Artefakts im Hinb
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
 
+
 ### Erklärung Artefakt
+Das Artefakt ist ein Pentest-Bericht, der mithilfe des ZED Attack Proxys (ZAP) durchgeführt wurde. Der Pentest zielt darauf ab, potenzielle Schwachstellen und Sicherheitslücken in der InsecureApp zu identifizieren. Der Bericht enthält eine Analyse der durchgeführten Tests, einschließlich passiver und aktiver Tests sowie Fuzzing-Angriffe.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
 
