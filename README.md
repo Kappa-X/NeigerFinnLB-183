@@ -26,13 +26,85 @@ Das Artefakt ist eine simple Analyse der OWASP Top Ten Web Application Security 
 Ich würde mal so weit gehen und sagen, dass die Umsetzung des Artefakts im Hinblick auf das Handlungsziel erfolgreich ist. Es bietet eine klare und simple Zusammenfassung der aktuellen grössten Bedrohungen (OWASP Top Ten), erläutert die Erkennung durch Fakten/ Zahlen, zeigt Informationen zu Gegenmassnahmen und mögliche Auswirkungen auf. Die präsentierte Tabelle strukturiert die Informationen so, dass die Informationen schnell und einfach zu verstehen sind. Wenn man das ganze, aber noch kritischer betrachtet, könnte man sagen, dass eine detaillierte Aufführung von Gegenmassnahmen und Auswirkungen in einigen Fällen von Vorteil sein könnten. Es könnte auch nützlich sein, konkrete Beispiele für Angriffe in der echten Welt hinzuzufügen, um das Verständnis noch einfacher und nahbarer zu machen. Insgesamt jedoch erfüllt das Artefakt das Handlungsziel, bietet eine solide Grundlage für das Verständnis aktueller Bedrohungen.
 
 ## Handlungsziel 2
-![Artefakt des Handlungsziel 2](-)
+
+### Artefakt
+```
+// NewsController.cs
+
+public class NewsController : ControllerBase
+{
+    private readonly INewsService _newsService;
+    private readonly IUserService _userService;
+
+    public NewsController(INewsService newsService, IUserService userService)
+    {
+        _newsService = newsService;
+        _userService = userService;
+    }
+
+    [HttpGet]
+    public IActionResult GetNews()
+    {
+        // Original implementation - expose all attributes
+        var newsList = _newsService.GetAllNews();
+        return Ok(newsList);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult GetNewsById(int id)
+    {
+        // Original implementation - expose all attributes
+        var news = _newsService.GetNewsById(id);
+        return Ok(news);
+    }
+
+    [HttpPost]
+    public IActionResult CreateNews([FromBody] NewsCreateDTO newsCreateDTO)
+    {
+        // Original implementation - expose all attributes
+        var userId = _userService.GetUserId();
+        var createdNews = _newsService.CreateNews(newsCreateDTO, userId);
+        return CreatedAtAction(nameof(GetNewsById), new { id = createdNews.Id }, createdNews);
+    }
+
+
+    [HttpGet]
+    public IActionResult GetNews()
+    {
+        var newsList = _newsService.GetAllNews();
+        var newsDTOList = newsList.Select(news => new NewsDTO
+        {
+            Id = news.Id,
+            Header = news.Header,
+            Detail = news.Detail,
+            PostedDate = news.PostedDate,
+            IsAdminNews = news.IsAdminNews,
+            AuthorId = news.AuthorId,
+            AuthorUsername = news.AuthorUsername
+        }).ToList();
+
+        return Ok(newsDTOList);
+    }
+
+
+    public class NewsDTO
+    {
+        public int Id { get; set; }
+        public string Header { get; set; }
+        public string Detail { get; set; }
+        public DateTime PostedDate { get; set; }
+        public bool IsAdminNews { get; set; }
+        public int AuthorId { get; set; }
+        public string AuthorUsername { get; set; }
+    }
+}
+```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
 
 
 ### Erklärung Artefakt
-Das Artefakt ist ein Pentest-Bericht, der mithilfe des ZED Attack Proxys (ZAP) durchgeführt wurde. Der Pentest zielt darauf ab, potenzielle Schwachstellen und Sicherheitslücken in der InsecureApp zu identifizieren. Der Bericht enthält eine Analyse der durchgeführten Tests, einschließlich passiver und aktiver Tests sowie Fuzzing-Angriffe.
+
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
 
