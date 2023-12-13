@@ -15,7 +15,7 @@ In diesem Portfolio werde ich die erreichten Handlungsziele im Modul 183 nachwei
 ![Artefakt des Handlungsziel 1](https://imgur.com/a/wQnKIkg)
 
 ## Handlungsziel 2
-![Artefakt des Handlungsziel 2](https://octodex.github.com/images/bannekat.png)
+![Artefakt des Handlungsziel 2](https://imgur.com/a/wQnKIkg)
 
 ## Handlungsziel 3
 ![Artefakt des Handlungsziel 3](https://octodex.github.com/images/bannekat.png)
