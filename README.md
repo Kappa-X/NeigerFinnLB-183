@@ -9,7 +9,7 @@ In diesem Portfolio werde ich die erreichten Handlungsziele im Modul 183 nachwei
 | 2   | Sicherheitslücken und ihre Ursachen in einer Applikation erkennen können. Gegenmassnahmen vorschlagen und implementieren können. | 30% |
 | 3   | Mechanismen für die Authentifizierung und Autorisierung umsetzen können. | 20% |
 | 4   | Sicherheitsrelevante Aspekte bei Entwurf, Implementierung und Inbetriebnahme berücksichtigen. | 30% |
-| 4   | Informationen für Auditing und Logging generieren. Auswertungen und Alarme definieren und implementieren. | 10% |
+| 5   | Informationen für Auditing und Logging generieren. Auswertungen und Alarme definieren und implementieren. | 10% |
 
 ## Handlungsziel 1
 
