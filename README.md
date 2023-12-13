@@ -12,7 +12,7 @@ In diesem Portfolio werde ich die erreichten Handlungsziele im Modul 183 nachwei
 | 4   | Informationen für Auditing und Logging generieren. Auswertungen und Alarme definieren und implementieren. | 10% |
 
 ## Handlungsziel 1
-![Artefakt des Handlungsziel 1]([https://octodex.github.com/images/bannekat.png](https://cdn.discordapp.com/attachments/912953190251642910/1184432122904190996/Screenshot_2023-12-13_104911.png?ex=658bf35f&is=65797e5f&hm=4e5a7c1074d40f8eb6ea0ae60fdc23ebd5ddb7e9d4c50f15c5dfaa9799fb3d91&))
+![Artefakt des Handlungsziel 1](https://imgur.com/a/wQnKIkg)
 
 ## Handlungsziel 2
 ![Artefakt des Handlungsziel 2](https://octodex.github.com/images/bannekat.png)
