@@ -101,7 +101,7 @@ public class NewsController : ControllerBase
 Dieser Code erfüllt das Handlungsziel, da durch die überarbeitung des Codes im NewsController dessen Schwachstellen besser abgedeckt werden.
 
 ### Erklärung Artefakt
-In diesem Fall ist das Artefakt eine überarbeitete Version des Codes im NewsController, welche die REST-Schnittstellen für die News-Operatioen besser schützt.
+In diesem Fall ist das Artefakt eine überarbeitete Version des Codes im NewsController, welche die REST-Schnittstellen für die News-Operatioen besser schützt. Das wurde erreicht durch das Erstellen eines DTO (Data Transfer Object), welches nur die notwendigen Daten enthält, um so die sensibleren Daten zu schützen. Die bereits vorhandenen Controller-Methoden wurden so angepasst, dass sie nur noch die Daten des DTOs verwenden, wodurch sichergestellt wird das nur die notwendigen Daten an den Client gesendet werden. Diese Änderungen dienen dazu, die Sicherheitslücke zu schließen, die durch die unnötige Offenlegung von Daten in der REST-Schnittstelle verursacht wurde.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
 
