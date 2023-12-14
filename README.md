@@ -98,10 +98,10 @@ public class NewsController : ControllerBase
 ```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
-
+Dieser Code erfüllt das Handlungsziel, da durch die überarbeitung des Codes im NewsController dessen Schwachstellen besser abgedeckt werden.
 
 ### Erklärung Artefakt
-
+In diesem Fall ist das Artefakt eine überarbeitete Version des Codes im NewsController, welche die REST-Schnittstellen für die News-Operatioen besser schützt.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
 
