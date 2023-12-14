@@ -126,6 +126,8 @@ public class NewsController : ControllerBase
 ## Handlungsziel 5
 ![Artefakt des Handlungsziel 5](-)
 
+## Selbsteinschätzung des Erreichungsgrades der Kompetenz des Moduls
+
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
 
 ### Erklärung Artefakt
