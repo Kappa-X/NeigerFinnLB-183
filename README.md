@@ -209,12 +209,8 @@ public class beispiel
    public IConfiguration Configuration { get; }
    public void ConfigureServices(IServiceCollection services)
    {
-       // Andere Konfigurationen ...
-       // Zugriff auf das Secret aus dem Secret Manager
        var secretValue = Configuration["MySecretKey"];
-       // Weitere Konfigurationen ...
    }
-   // Weitere Methoden ...
 }
 ```
 
@@ -228,7 +224,50 @@ Das Artefakt ist ein simples C#-Codebeispiel, welches die sichere Verwendung von
 Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die Implementation und Verwendung des Secret Manager-Tools in C# auf, was einen wichtigen Schritt für die Sicherheit darstellt, jedoch deckt es nicht alle Sicherheitsaspekte bei Entwurf, Implementierung und Inbetriebnahme ab. Man muss zum Beispiel an sichere Architektur (Containerisierung, Netzwerksicherheit und etc.), Datenvalidierung von Benutzereingaben (um Injections, Cross-Site Scripting und etc. zu verhindern), Implementierung einer robusten Fehlerbehandlung und noch vieles mehr denken.
 
 ## Handlungsziel 5
-![Artefakt des Handlungsziel 5](-)
+
+### Artefakt
+
+```
+// Beispielcode um einen Logger in eine Program.cs Datei zu integrieren
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+    logging.AddDebug();
+});
+
+----
+
+// Beispielcode für Verwendung eines Loggers in einem Controller
+public class BeispielController : ControllerBase
+{
+    private readonly ILogger _logger;
+
+    public ExampleController(ILogger<ExampleController> logger)
+    {
+        _logger = logger;
+    }
+
+    public ActionResult SomeAction()
+    {
+        try
+        {
+            _logger.LogInformation("Executing SomeAction");
+
+            _logger.LogInformation("SomeAction executed successfully");
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while executing SomeAction");
+
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+}
+
+```
 
 ## Selbsteinschätzung des Erreichungsgrades der Kompetenz des Moduls
 
@@ -237,3 +276,4 @@ Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die I
 ### Erklärung Artefakt
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
+
