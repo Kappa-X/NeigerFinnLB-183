@@ -185,6 +185,7 @@ public class LoginController : ControllerBase
 ```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
+Das Handlungsziel wird durch das gezeigte Artefakt in sofern abgedeckt, da mit diesem ein JWT-basiertes Authentifizierungssystem in eine C#-Anwendung implementiert werden könnte. Damit wird eine sichere Generierung von Tokens für User sichergestellt, welche sich erfolgreich authentifiziert haben.
 
 ### Erklärung Artefakt
 
