@@ -107,7 +107,81 @@ In diesem Fall ist das Artefakt eine überarbeitete Version des Codes im NewsCon
 Ich würde die Umsetzung des Artefakts auf Hinblick auf das Handlungsziel als erfolgreich sehen, da dieses das Handlungsziel 2 mehr oder weniger ziemlich gut abdeckt. Die Implementation des DTO erlaubt einem zu kontrollieren, welche Daten über die Rest-Schnittstelle freigegeben wird. Durch diese Massnahme wird das Prinzip der minimalen Berechtigungen eingehalten, da nur die für den Client relevanten Daten weitergegeben werden. Kurz gesagt trägt die Überarbeitung dazu bei, Sicherheitslücken zu schliessen und die Angriffsfläche der Anwendung zu reduzieren. Natürlich muss man auch sagen, dass damit auch weiterhin noch weitere Sicherheitsanstrengungen nötig sind und noch weitere Massnahmen vorgenommen werden müssen, um die Sicherheit der Anwendung zu erhöhen.
 
 ## Handlungsziel 3
-![Artefakt des Handlungsziel 3](-)
+
+### Artefakt
+```
+public class JwtAuthenticationService
+{
+   private readonly IConfiguration _configuration;
+   public JwtAuthenticationService(IConfiguration configuration)
+   {
+       _configuration = configuration;
+   }
+   public string GenerateJwtToken(User user)
+   {
+       var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+       var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
+       var claims = new List<Claim>
+       {
+           new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+           new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+           new Claim(JwtRegisteredClaimNames.UniqueName, user.Username),
+           new Claim(ClaimTypes.Role, user.IsAdmin ? "admin" : "user")
+       };
+       var tokenDescriptor = new SecurityTokenDescriptor
+       {
+           Subject = new ClaimsIdentity(claims),
+           Expires = DateTime.UtcNow.AddHours(24),
+           SigningCredentials = credentials,
+           Issuer = _configuration["Jwt:Issuer"],
+           Audience = _configuration["Jwt:Audience"]
+       };
+       var tokenHandler = new JwtSecurityTokenHandler();
+       var token = tokenHandler.CreateToken(tokenDescriptor);
+       return tokenHandler.WriteToken(token);
+   }
+}
+
+---
+
+[ApiController]
+[Route("api/[controller]")]
+
+public class LoginController : ControllerBase
+
+{
+
+    private readonly JwtAuthenticationService _jwtAuthenticationService;
+
+    public LoginController(JwtAuthenticationService jwtAuthenticationService)
+
+    {
+
+        _jwtAuthenticationService = jwtAuthenticationService;
+
+    }
+
+    [HttpPost("authenticate")]
+
+    public IActionResult Authenticate([FromBody] LoginRequestModel loginModel)
+
+    {
+
+
+        var user = ValidateCredentials(loginModel);
+
+        if (user == null)
+
+            return Unauthorized();
+
+        var token = _jwtAuthenticationService.GenerateJwtToken(user);
+
+        return Ok(new { Token = token });
+
+    }
+
+}
+```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
 
