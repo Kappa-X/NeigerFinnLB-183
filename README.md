@@ -109,6 +109,7 @@ Ich würde die Umsetzung des Artefakts auf Hinblick auf das Handlungsziel als er
 ## Handlungsziel 3
 
 ### Artefakt
+
 ```
 public class JwtAuthenticationService
 {
