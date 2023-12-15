@@ -222,10 +222,10 @@ public class beispiel
 Das Handlungsziel 4 wurde mit dem Artefakt erreicht durch das Zeigen eines Codebeispiels, welches aufzeigt, wie man mit C# auf das Secret Manger-Tool zugreifen und verwenden kann, was ein wichtiger Teil ist, wenn man sicherheitsrelevante Aspekte bei Entwurf, Implementierung und Inbetriebnahme berücksichtigt.
 
 ### Erklärung Artefakt
-Das Artefakt ist ein simples C# Codebeispiel, welches die sichere Verwendung von Secrets mit der Nutzung des Secret Manger-Tools aufzeigt. Der Code greift mithilfe des Secret Manger-Tools auf ein Secret zu, womit die Sicherheit sensibler Daten besser gewährleistet werden kann.
+Das Artefakt ist ein simples C#-Codebeispiel, welches die sichere Verwendung von Secrets mit der Nutzung des Secret Manger-Tools aufzeigt. Der Code greift mithilfe des Secret Manger-Tools auf ein Secret zu, womit die Sicherheit sensibler Daten besser gewährleistet werden kann.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
-Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die Verwendung des Secret Manager-Tools in C# auf, was einen wichtigen Schritt für die Sicherheit darstellt. Es deckt jedoch nicht alle Sicherheitsaspekte bei Entwurf, Implementierung und Inbetriebnahme ab. Man muss zum Beispiel an sichere Architektur (Containerisierung, Netzwerksicherheit und etc.), Datenvalidierung von Benutzereingaben (um Injections, Cross-Site Scripting und etc. zu verhindern), Implementierung einer robusten Fehlerbehandlung und noch vieles mehr denken.
+Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die Verwendung des Secret Manager-Tools in C# auf, was einen wichtigen Schritt für die Sicherheit darstellt, jedoch deckt es nicht alle Sicherheitsaspekte bei Entwurf, Implementierung und Inbetriebnahme ab. Man muss zum Beispiel an sichere Architektur (Containerisierung, Netzwerksicherheit und etc.), Datenvalidierung von Benutzereingaben (um Injections, Cross-Site Scripting und etc. zu verhindern), Implementierung einer robusten Fehlerbehandlung und noch vieles mehr denken.
 
 ## Handlungsziel 5
 ![Artefakt des Handlungsziel 5](-)
