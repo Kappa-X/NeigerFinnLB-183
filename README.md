@@ -269,11 +269,10 @@ public class BeispielController : ControllerBase
 
 ```
 
-## Selbsteinschätzung des Erreichungsgrades der Kompetenz des Moduls
-
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
 
 ### Erklärung Artefakt
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
 
+## Selbsteinschätzung des Erreichungsgrades der Kompetenz des Moduls
