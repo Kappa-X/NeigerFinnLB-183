@@ -185,11 +185,13 @@ public class LoginController : ControllerBase
 ```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
-Das Handlungsziel wird durch das gezeigte Artefakt in sofern abgedeckt, da mit diesem ein JWT-basiertes Authentifizierungssystem in eine C#-Anwendung implementiert werden könnte. Damit wird eine sichere Generierung von Tokens für User sichergestellt, welche sich erfolgreich authentifiziert haben.
+Das Handlungsziel wird durch das gezeigte Artefakt in sofern abgedeckt, da mit diesem ein JWT-basiertes Authentifizierungssystem in eine C#-Anwendung implementiert werden könnte. Damit wird eine sichere Generierung von JWT-Tokens für User sichergestellt, welche sich erfolgreich authentifiziert haben.
 
 ### Erklärung Artefakt
+Das Artefakt ist ein C#-Codebeispiel, das einen JWT-Authentifizierungsservice darstellt. Der Service generiert sichere JWT-Tokens, die nach einer erfolgreichen Authentifizierung an den Client zurückgegeben werden. Diese Tokens enthalten wichtige Benutzerinformationen und ermöglichen den Zugriff auf geschützte Teile der jeweiligen Anwendung. Der Code ist klar strukturiert und verwendet die HMAC SHA-512-Signaturmethode für die Token.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
+Diese Umsetzung des Artefakts erfüllt vor allem diesen Teil des Hanlungsziel 3 "Mechanismen für die Authentifizierung umsetzen können", da der JWT-Authentifizierungsservice mit seinen Tokens eine gute Grundlage für die Authentifizierung bietet. Jedoch ist die Anwendung nicht vor dem Sicherheitsrisiko Mensch geschützt, was in der hinsicht auf Authentifizierung und Autorisierung durch Vorgaben für die Passwörter minimiert werden könnte. Natürlich muss die implementation auf die Anwendung in welche sie integriert wird angepasst werden, um die möglichen Schwachstellen zu minimieren.
 
 ## Handlungsziel 4
 ![Artefakt des Handlungsziel 4](-)
