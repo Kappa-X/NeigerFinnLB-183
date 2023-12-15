@@ -225,7 +225,7 @@ Das Handlungsziel 4 wurde mit dem Artefakt erreicht durch das Zeigen eines Codeb
 Das Artefakt ist ein simples C#-Codebeispiel, welches die sichere Verwendung von Secrets mit der Nutzung des Secret Manger-Tools aufzeigt. Der Code greift mithilfe des Secret Manger-Tools auf ein Secret zu, womit die Sicherheit sensibler Daten besser gewährleistet werden kann.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
-Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die Verwendung des Secret Manager-Tools in C# auf, was einen wichtigen Schritt für die Sicherheit darstellt, jedoch deckt es nicht alle Sicherheitsaspekte bei Entwurf, Implementierung und Inbetriebnahme ab. Man muss zum Beispiel an sichere Architektur (Containerisierung, Netzwerksicherheit und etc.), Datenvalidierung von Benutzereingaben (um Injections, Cross-Site Scripting und etc. zu verhindern), Implementierung einer robusten Fehlerbehandlung und noch vieles mehr denken.
+Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die Implementation und Verwendung des Secret Manager-Tools in C# auf, was einen wichtigen Schritt für die Sicherheit darstellt, jedoch deckt es nicht alle Sicherheitsaspekte bei Entwurf, Implementierung und Inbetriebnahme ab. Man muss zum Beispiel an sichere Architektur (Containerisierung, Netzwerksicherheit und etc.), Datenvalidierung von Benutzereingaben (um Injections, Cross-Site Scripting und etc. zu verhindern), Implementierung einer robusten Fehlerbehandlung und noch vieles mehr denken.
 
 ## Handlungsziel 5
 ![Artefakt des Handlungsziel 5](-)
