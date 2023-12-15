@@ -185,20 +185,22 @@ public class LoginController : ControllerBase
 ```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
-Das Handlungsziel wird durch das gezeigte Artefakt in sofern abgedeckt, da mit diesem ein JWT-basiertes Authentifizierungssystem in eine C#-Anwendung implementiert werden könnte. Damit wird eine sichere Generierung von JWT-Tokens für User sichergestellt, welche sich erfolgreich authentifiziert haben.
+Das Handlungsziel wird durch das gezeigte Artefakt insofern abgedeckt, da mit diesem ein JWT-basiertes Authentifizierungssystem in eine C#-Anwendung implementiert werden könnte. Damit wird eine sichere Generierung von JWT-Tokens für User sichergestellt, welche sich erfolgreich authentifiziert haben.
 
 ### Erklärung Artefakt
 Das Artefakt ist ein C#-Codebeispiel, das einen JWT-Authentifizierungsservice darstellt. Der Service generiert sichere JWT-Tokens, die nach einer erfolgreichen Authentifizierung an den Client zurückgegeben werden. Diese Tokens enthalten wichtige Benutzerinformationen und ermöglichen den Zugriff auf geschützte Teile der jeweiligen Anwendung. Der Code ist klar strukturiert und verwendet die HMAC SHA-512-Signaturmethode für die Token.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
-Diese Umsetzung des Artefakts erfüllt vor allem diesen Teil des Hanlungsziel 3 "Mechanismen für die Authentifizierung umsetzen können", da der JWT-Authentifizierungsservice mit seinen Tokens eine gute Grundlage für die Authentifizierung bietet. Jedoch ist die Anwendung nicht vor dem Sicherheitsrisiko Mensch geschützt, was in der hinsicht auf Authentifizierung und Autorisierung durch Vorgaben für die Passwörter minimiert werden könnte. Natürlich muss die implementation auf die Anwendung in welche sie integriert wird angepasst werden, um die möglichen Schwachstellen zu minimieren.
+Diese Umsetzung des Artefakts erfüllt vor allem diesen Teil des Handlungsziel 3 "Mechanismen für die Authentifizierung umsetzen können", da der JWT-Authentifizierungsservice mit seinen Tokens eine gute Grundlage für die Authentifizierung bietet. Jedoch ist die Anwendung nicht vor dem Sicherheitsrisiko Mensch geschützt, was in der Hinsicht auf Authentifizierung und Autorisierung durch Vorgaben für die Passwörter minimiert werden könnte. Natürlich muss die Implementation auf die Anwendung, in welche sie integriert wird, angepasst werden, um die möglichen Schwachstellen zu minimieren.
+
+
 
 ## Handlungsziel 4
 
 ### Artefakt
 
 ```
-public class Startup
+public class beispiel
 {
    public Startup(IConfiguration configuration)
    {
@@ -217,10 +219,13 @@ public class Startup
 ```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
+Das Handlungsziel 4 wurde mit dem Artefakt erreicht durch das Zeigen eines Codebeispiels, welches aufzeigt, wie man mit C# auf das Secret Manger-Tool zugreifen und verwenden kann, was ein wichtiger Teil ist, wenn man sicherheitsrelevante Aspekte bei Entwurf, Implementierung und Inbetriebnahme berücksichtigt.
 
 ### Erklärung Artefakt
+Das Artefakt ist ein simples C# Codebeispiel, welches die sichere Verwendung von Secrets mit der Nutzung des Secret Manger-Tools aufzeigt. Der Code greift mithilfe des Secret Manger-Tools auf ein Secret zu, womit die Sicherheit sensibler Daten besser gewährleistet werden kann.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
+Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die Verwendung des Secret Manager-Tools in C# auf, was einen wichtigen Schritt für die Sicherheit darstellt. Es deckt jedoch nicht alle Sicherheitsaspekte bei Entwurf, Implementierung und Inbetriebnahme ab. Man muss zum Beispiel an sichere Architektur (Containerisierung, Netzwerksicherheit und etc.), Datenvalidierung von Benutzereingaben (um Injections, Cross-Site Scripting und etc. zu verhindern), Implementierung einer robusten Fehlerbehandlung und noch vieles mehr denken.
 
 ## Handlungsziel 5
 ![Artefakt des Handlungsziel 5](-)
