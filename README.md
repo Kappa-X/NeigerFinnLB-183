@@ -228,51 +228,62 @@ Die Umsetzung des Artefakts ist kritisch zu betrachten. Der Code zeigt nur die I
 ### Artefakt
 
 ```
-// Beispielcode um einen Logger in eine Program.cs Datei zu integrieren
-builder.Host.ConfigureLogging(logging =>
+using System;
+
+public class Logger
 {
-    logging.ClearProviders();
-    logging.AddConsole();
-    logging.AddDebug();
-});
-
-----
-
-// Beispielcode für Verwendung eines Loggers in einem Controller
-public class BeispielController : ControllerBase
-{
-    private readonly ILogger _logger;
-
-    public ExampleController(ILogger<ExampleController> logger)
+    public void LogInfo(string message)
     {
-        _logger = logger;
+        LogMessage("INFO", message);
     }
 
-    public ActionResult SomeAction()
+    public void LogWarning(string message)
     {
-        try
-        {
-            _logger.LogInformation("Executing SomeAction");
+        LogMessage("WARNING", message);
+    }
 
-            _logger.LogInformation("SomeAction executed successfully");
+    public void LogError(string message)
+    {
+        LogMessage("ERROR", message);
+        TriggerAlarm(message);
+    }
 
-            return Ok();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "An error occurred while executing SomeAction");
+    private void LogMessage(string level, string message)
+    {
+        string formattedMessage = $"{DateTime.Now} [{level}] - {message}";
+        Console.WriteLine(formattedMessage);
+    }
 
-            return StatusCode(500, "Internal Server Error");
-        }
+    private void TriggerAlarm(string errorMessage)
+    {
+        Console.WriteLine($"ALARM triggered: {errorMessage}");
+    }
+}
+
+// Beispielcode, um Konsolenausgaben zu generieren
+class Program
+{
+    static void Main()
+    {
+        Logger logger = new Logger();
+
+        logger.LogInfo("Anwendung gestartet.");
+        logger.LogWarning("Warnung: Niedriger Speicherplatz.");
+        logger.LogError("Fehler: Datenbankverbindung fehlgeschlagen.");
+
+        Console.ReadLine(); 
     }
 }
 
 ```
 
 ### Wie wurde das Handlungsziel mit dem Artefakt erreicht?
+Durch das Erstellen dieses Code-Beispiels für eine C#-Anwendung wird aufgezeigt, dass ich verstehe, wie man Informationen für Logging und Auditing generiert und wie man eine funktionierende Alarmfunktion für Fehlermeldungen implementiert.
 
 ### Erklärung Artefakt
+Das Code-Beispiel zeigt zum einen eine Logging-Klasse in C#, die verschiedenen Logniveaus (Info, Warning, Error) enthält, welche je nach Situation inklusive Zeitstempel protokolliert werden. Bei einem Fehler (bei den Logniveaus ein Error) wird die Alarmfunktion abgerufen. Die Program-Class wurde nur hinzugefügt, um die Ausgaben in der Konsole zu testen.
 
 ### Beurteilung Umsetzung Artefakt im Hinblick auf das Handlungsziel
+Die Umsetzung des Artefakts erfüllt das Handlungsziel, Informationen für Auditing und Logging zu generieren. Die Logging-Klasse ermöglicht es, verschiedene Arten von Lognachrichten zu generieren und zu protokollieren. Die Alarmfunktion bei Fehlern (bei dem Logniveau Error) bietet eine Möglichkeit, auf kritische Situationen zu reagieren. Ein möglicher Kritikpunkt könnte sein, dass die Alarmfunktion in der aktuellen Version in einer einfachen Nachricht in der Konsole ausgegeben wird und es kein wirkliches System dahinter gibt. Je nach Anwendungsfall könnte dies eine Erweiterungsmöglichkeit sein.
 
 ## Selbsteinschätzung des Erreichungsgrades der Kompetenz des Moduls
